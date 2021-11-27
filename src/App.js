@@ -8,7 +8,6 @@ import { styled } from '@mui/material/styles';
 import { grid } from '@mui/system';
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
-import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 import Stack from '@mui/material/Stack';
 import Slider, { SliderThumb } from '@mui/material/Slider';
 import Button from '@mui/material/Button';
@@ -27,18 +26,6 @@ const marks = [
 function valuetext(value) {
   return `${value}°C`;
 }
-
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-  height: 15,
-  borderRadius: 5,
-  [`&.${linearProgressClasses.colorPrimary}`]: {
-    backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
-  },
-  [`& .${linearProgressClasses.bar}`]: {
-    borderRadius: 5,
-    background: 'linear-Gradient(to right, hsl(6, 100%, 80%) 50%, hsl(335, 100%, 65%))',
-  },
-}));
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -221,64 +208,6 @@ export default function App() {
           </Grid>
         </Grid>
       </Box>
-
-      {/* <Item sx={{
-        textAlign: 'start',
-        width: 350,
-        borderRadius: '20px 50px 20px 10px'
-      }}>
-        <Typography variant='h2' sx={{
-          ml: 5,
-          pt: 2
-        }}>
-          <img src='./images/logo.svg' />
-
-        </Typography>
-        <Box sx={{
-          display: 'inline-grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          mt: 2,
-          mb: 2,
-          ml: 5
-        }}>
-          <Item sx={{
-            backgroundColor: 'hsl(229, 57%, 11%)',
-            borderRadius: 2,
-            width: '30px',
-            height: '30px'
-          }}>
-            <img src='./images/icon-document.svg' height='25px' width='20px'
-              style={{ paddingTop: '2px' }}
-            />
-          </Item>
-          <Item sx={{
-            backgroundColor: 'hsl(229, 57%, 11%)',
-            borderRadius: 2,
-            width: '30px',
-            height: '30px'
-          }}>
-            <img src='./images/icon-folder.svg' height='25px' width='25px'
-              style={{ paddingTop: '2px' }} />
-          </Item>
-          <Item sx={{
-            backgroundColor: 'hsl(229, 57%, 11%)',
-            borderRadius: 2,
-            width: '30px',
-            height: '30px',
-          }}>
-            <img src='./images/icon-upload.svg' height='20px' width='25px'
-              style={{ paddingTop: '5px' }}
-            />
-          </Item>
-
-
-        </Box>
-
-      </Item>
-      <Item sx={{}}>
-
-      </Item> */}
-
 
     </Container>
   );
